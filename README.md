@@ -1,62 +1,8 @@
-# Template Proyek Django PBP
+1. Kaitan dari url.py, views.py, models.py, dan berkas HTML terdapat pada kaitan dengan alur proses permintaan sesuai dengan bagan. Suatu permintaan yang masuk pertama-tama akan di proses melalui urls.py yang kemudian tersalurkan ke views.py ke fungsi yang sama di dalamnya. Jika dalam proses membutuhkan suatu keterlibatan database, maka views.py akan melakukan atau memanggil query (permintaan data ke database) ke models.py yang akan melakukan transaksi data dengan database dan dikembalikan kembali ke views.py. Dari views.py ini, hasil dari proses akan dipetakan ke dalam HTML yang sudah didefinisikan.
 
-Pemrograman Berbasis Platform (CSGE602022) - diselenggarakan oleh Fakultas Ilmu Komputer Universitas Indonesia, Semester Ganjil 2022/2023
+2. Virtual environment adalah suatu tools atau alat yang memungkinkan kita untuk membuat suatu lingkungan virtual yang terisolasi mengapa? Pada saat kita membuat aplikasi dan aplikasi tersebut berjalan dengan sempurna dengan suatu versi django misalkan. Kemudian django merilis versi baru dan aplikasi sebelumnya menjadi tidak bisa dijalankan karena adanya perubahan fungsi. Lalu kita diperlukan membuat aplikasi lain yang menggunakan versi baru. Oleh karena itu, kita perlu membuatnya menggunakan virtual environment agar setiap aplikasi memiliki modul versinya sendiri dalam satu komputer.
 
-*Read this in other languages: [Indonesian](README.md), [English](README.en.md)*
-
-## Pendahuluan
-
-Repositori ini merupakan sebuah template yang dirancang untuk membantu mahasiswa yang sedang mengambil mata kuliah Pemrograman Berbasis Platform (CSGE602022) mengetahui struktur sebuah proyek aplikasi Django serta file dan konfigurasi yang penting dalam berjalannya aplikasi. Kamu dapat dengan bebas menyalin isi dari repositori ini atau memanfaatkan repositori ini sebagai pembelajaran sekaligus awalan dalam membuat sebuah proyek Django.
-
-## Cara Menggunakan
-
-Apabila kamu ingin menggunakan repositori ini sebagai repositori awalan yang nantinya akan kamu modifikasi:
-
-1. Buka laman GitHub repositori templat kode, lalu klik tombol "**Use this template**"
-   untuk membuat salinan repositori ke dalam akun GitHub milikmu.
-2. Buka laman GitHub repositori yang dibuat dari templat, lalu gunakan perintah
-   `git clone` untuk menyalin repositorinya ke suatu lokasi di dalam sistem
-   berkas (_filesystem_) komputermu:
-
-   ```shell
-   git clone <URL ke repositori di GitHub> <path ke suatu lokasi di filesystem>
-   ```
-3. Masuk ke dalam repositori yang sudah di-_clone_ dan jalankan perintah berikut
-   untuk menyalakan _virtual environment_:
-
-   ```shell
-   python -m venv env
-   ```
-4. Nyalakan environment dengan perintah berikut:
-
-   ```shell
-   # Windows
-   .\env\Scripts\activate
-   # Linux/Unix, e.g. Ubuntu, MacOS
-   source env/bin/activate
-   ```
-5. Install dependencies yang dibutuhkan untuk menjalankan aplikasi dengan perintah berikut:
-
-   ```shell
-   pip install -r requirements.txt
-   ```
-
-6. Jalankan aplikasi Django menggunakan server pengembangan yang berjalan secara
-   lokal:
-
-   ```shell
-   python manage.py runserver
-   ```
-7. Bukalah `http://localhost:8000` pada browser favoritmu untuk melihat apakah aplikasi sudah berjalan dengan benar.
-
-## Contoh Deployment 
-
-Pada template ini, deployment dilakukan dengan memanfaatkan GitHub Actions sebagai _runner_ dan Heroku sebagai platform Hosting aplikasi. 
-
-Untuk melakukan deployment, kamu dapat melihat instruksi yang ada pada [Tutorial 0](https://pbp-fasilkom-ui.github.io/ganjil-2023/assignments/tutorial/tutorial-0).
-
-Untuk contoh aplikasi Django yang sudah di deploy, dapat kamu akses di [https://django-pbp-template.herokuapp.com/](https://django-pbp-template.herokuapp.com/)
-
-## Credits
-
-Template ini dibuat berdasarkan [PBP Ganjil 2021](https://gitlab.com/PBP-2021/pbp-lab) yang ditulis oleh Tim Pengajar Pemrograman Berbasis Platform 2021 ([@prakashdivyy](https://gitlab.com/prakashdivyy)) dan [django-template-heroku](https://github.com/laymonage/django-template-heroku) yang ditulis oleh [@laymonage, et al.](https://github.com/laymonage). Template ini dirancang sedemikian rupa sehingga mahasiswa dapat menjadikan template ini sebagai awalan serta acuan dalam mengerjakan tugas maupun dalam berkarya.
+3. Untuk poin 1: saya pertama-tama membuat fungsi yang menerima parameter request dan akan mereturn render dari katalog.html. Kemudian melakukan import models ke dalam views, lalu saya membuat fungsi untuk melakukan query ke models dan menyimpannya ke dalam suatu variabel. Terakhir tambahkan ke dalam fungsi render.
+   Untuk poin 2: saya melakukan routing dengan pertama-tama mengimport fungsi dari views dan menambahkan suatu urlpatterns dengan path ke fungsi tersebut.
+   Untuk poin 3: saya pertama-tama mengganti nama dan NPM atau student ID pada bagian Fill me! sesuai dengan yang ada dalam variabel di views. Lalu saya melakukan iterasi untuk setiap isi dari tabel dikarenakan berbeda dengan nama dan NPM, isi dari tabel merupakan suatu objek dalam suatu kontainer sehingga harus dipanggil nama objek secara spesifik satu per satu.
+   Untuk poin 4: pertama-tama saya mengisikan API key dan nama aplikasi untuk heroku pada konfigurasi repositori github, kita tambahkan kedua hal tersebut dan kita lakukan add, commit, dan push. 
