@@ -1,6 +1,6 @@
 1. Kaitan dari url.py, views.py, models.py, dan berkas HTML terdapat pada kaitan dengan alur proses permintaan sesuai dengan bagan. Suatu permintaan yang masuk pertama-tama akan di proses melalui urls.py yang kemudian tersalurkan ke views.py ke fungsi yang sama di dalamnya. Jika dalam proses membutuhkan suatu keterlibatan database, maka views.py akan melakukan atau memanggil query (permintaan data ke database) ke models.py yang akan melakukan transaksi data dengan database dan dikembalikan kembali ke views.py. Dari views.py ini, hasil dari proses akan dipetakan ke dalam HTML yang sudah didefinisikan.
 
-!(https://imgur.com/TCCqgcS)
+![IMAGE](https://imgur.com/TCCqgcS)
 
 2. Virtual environment adalah suatu tools atau alat yang memungkinkan kita untuk membuat suatu lingkungan virtual yang terisolasi mengapa? Pada saat kita membuat aplikasi dan aplikasi tersebut berjalan dengan sempurna dengan suatu versi django misalkan. Kemudian django merilis versi baru dan aplikasi sebelumnya menjadi tidak bisa dijalankan karena adanya perubahan fungsi. Lalu kita diperlukan membuat aplikasi lain yang menggunakan versi baru. Oleh karena itu, kita perlu membuatnya menggunakan virtual environment agar setiap aplikasi memiliki modul versinya sendiri dalam satu komputer.
 
