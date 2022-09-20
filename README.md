@@ -1,12 +1,9 @@
-1. Kaitan dari url.py, views.py, models.py, dan berkas HTML terdapat pada kaitan dengan alur proses permintaan sesuai dengan bagan. Suatu permintaan yang masuk pertama-tama akan di proses melalui urls.py yang kemudian tersalurkan ke views.py ke fungsi yang sama di dalamnya. Jika dalam proses membutuhkan suatu keterlibatan database, maka views.py akan melakukan atau memanggil query (permintaan data ke database) ke models.py yang akan melakukan transaksi data dengan database dan dikembalikan kembali ke views.py. Dari views.py ini, hasil dari proses akan dipetakan ke dalam HTML yang sudah didefinisikan.
-
-![IMAGE](Bagan.jpg)
-
-2. Virtual environment adalah suatu tools atau alat yang memungkinkan kita untuk membuat suatu lingkungan virtual yang terisolasi mengapa? Pada saat kita membuat aplikasi dan aplikasi tersebut berjalan dengan sempurna dengan suatu versi django misalkan. Kemudian django merilis versi baru dan aplikasi sebelumnya menjadi tidak bisa dijalankan karena adanya perubahan fungsi. Lalu kita diperlukan membuat aplikasi lain yang menggunakan versi baru. Oleh karena itu, kita perlu membuatnya menggunakan virtual environment agar setiap aplikasi memiliki modul versinya sendiri dalam satu komputer.
-
-3. Untuk poin 1: saya pertama-tama membuat fungsi yang menerima parameter request dan akan mereturn render dari katalog.html. Kemudian melakukan import models ke dalam views, lalu saya membuat fungsi untuk melakukan query ke models dan menyimpannya ke dalam suatu variabel. Terakhir tambahkan ke dalam fungsi render.
-   Untuk poin 2: saya melakukan routing dengan pertama-tama mengimport fungsi dari views dan menambahkan suatu urlpatterns dengan path ke fungsi tersebut.
-   Untuk poin 3: saya pertama-tama mengganti nama dan NPM atau student ID pada bagian Fill me! sesuai dengan yang ada dalam variabel di views. Lalu saya melakukan iterasi untuk setiap isi dari tabel dikarenakan berbeda dengan nama dan NPM, isi dari tabel merupakan suatu objek dalam suatu kontainer sehingga harus dipanggil nama objek secara spesifik satu per satu.
-   Untuk poin 4: pertama-tama saya mengisikan API key dan nama aplikasi untuk heroku pada konfigurasi repositori github, kita tambahkan kedua hal tersebut dan kita lakukan add, commit, dan push. 
-
 Link untuk app heroku: https://tugaspbp2.herokuapp.com/
+
+1. HTML  : Hyper Text Markup Language adalah bahasa markup standar untuk membuat halaman web, mendeskripsi struktur web secara sematik dan biasanya juga ada isyarat penampilan dokumen
+   JSON  : JavaScript Object Notation adalah suatu format yang ditulis dalam Javascript, datanya disimpan dalam bentuk berpasangan key dan value, penyimpanan dengan efisien tetapi tidak enak dilihat, ekstensi file .json, mengambil suatu string JSON, untuk aplikasi AJAX JSON lebih cepat dan mudah dari XML
+   XML   : eXtensible Markup Language adalah bahasa markup bukan bahasa pemograman, datanya disimpan dalam bentuk tree structure, case sensitive, penyimpanan dengan cara terstruktur dan mudah dibaca tetapi kurang efisien, ekstensi file .xml, mengambil sebuah dokumen XML, menggunakan XML DOM untuk loop dokumen, mengekstrak value dan menyimpannya dalam variabel
+
+2. Pada saat mengimplementasi sebuah platform data delivery akan digunakan untuk mengirimkan suatu data dari satu stack ke stack lainnya. Data delivery akan menghubungkan browser dengan server, pada saat browser meminta suatu HTML page maka server akan membalikkan sebuah HTML file, saat browser meminta JPG image, maka server membalikkan JPG file, dan lain-lain. Data yang dikirim dapat berupa berbagai bentuk. Beberapa yang sering ditemui adalah XML, JSON, dan HTML. Tanpanya tidak ada data apapun yang ditampilkan atau diberikan ketika adanya permintaan.
+
+3. 
