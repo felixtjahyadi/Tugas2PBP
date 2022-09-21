@@ -111,6 +111,6 @@ class MyWatchListTest (TestCase):
         self.assertEqual(response.status_code,200)
 
 Screenshot POSTMAN:
-!(HTMLPOSTMAN.png)
-!(XMLPOSTMAN.png)
-!(JSONPOSTMAN.png)
+![](HTMLPOSTMAN.png)
+![](XMLPOSTMAN.png)
+![](JSONPOSTMAN.png)
