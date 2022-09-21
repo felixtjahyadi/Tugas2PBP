@@ -1,4 +1,4 @@
-Link untuk app heroku: https://tugaspbp2.herokuapp.com/
+Link untuk app heroku: https://tugaspbp2.herokuapp.com/mywatchlist/
 
 1. HTML: Hyper Text Markup Language adalah bahasa markup standar untuk membuat halaman web, mendeskripsi struktur web secara sematik dan biasanya juga ada isyarat penampilan dokumen
    | JSON: JavaScript Object Notation adalah suatu format yang ditulis dalam Javascript, datanya disimpan dalam bentuk berpasangan key dan value, penyimpanan dengan efisien tetapi tidak enak dilihat, ekstensi file .json, mengambil suatu string JSON, untuk aplikasi AJAX JSON lebih cepat dan mudah dari XML
