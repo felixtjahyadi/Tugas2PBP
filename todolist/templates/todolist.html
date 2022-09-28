@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Tugas 4 PBP/PBD To Do List</h1>
+
+<div style="margin-top:10px;">
+  User:
+  {{user}}
+</div>
+
+<div style="margin-top:10px;">
+<button><a href="{% url 'todolist:create_task' %}">Tambah Task Baru</a></button>
+</div>
+
+<table>
+    <tr>
+      <th>Date</th>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Status</th>
+      <th>Update</th>
+      <th>Delete</th> 
+    </tr>
+    {% for task in list_task %}
+    <tr>
+        <th>{{task.date}}</th>
+        <th>{{task.title}}</th>
+        <th>{{task.description}}</th>
+        {% if task.is_finished %}
+        <th> Selesai </th>
+        {% else %}
+        <th> Belum Selesai </th>
+        {% endif %}
+        <th> <button> <a href="{% url 'todolist:change_status' task.id %}"> Ganti Status</a> </button> </th>
+        <th> <button> <a href="{% url 'todolist:delete' task.id %}"> Delete </a> </button> </th>
+    </tr>
+    {% endfor %}
+  </table>
+  
+  <div style="margin-top:10px;">
+  <button><a href="{% url 'todolist:logout' %}">Logout</a></button>
+  </div>
+{% endblock content %}

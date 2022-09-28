@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<form method="POST" action="">
+    <h1>TASK FORM</h1>
+    {% csrf_token %}
+    <div>
+        Title:
+        <div>{{ form.title }}</div>
+    </div>
+    <div style="margin-top:10px;">
+        Description:
+        <div>{{ form.description }}</div>
+    </div>
+    <input type="submit" value="Submit" />
+</form>
+{% endblock content %}
