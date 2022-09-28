@@ -15,3 +15,4 @@ Poin 7 = Melakukan routing dengan menghubungkan fungsi dalam urls.py milik todol
 Poin 8 = Dikarenakan secret masih sama untuk aplikasi Heroku, bisa langsung melakukan add, commit, dan push pada cmd.
 Poin 9 = Melakukan registrasi sebanyak 2 kali dan mengisi atau menambahkan task data sebanyak 3 kali.
 
+LINK: https://tugaspbp2.herokuapp.com/todolist/
