@@ -1,43 +1,51 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h1>Tugas 4 PBP/PBD To Do List</h1>
+<h1 class="text-4xl text-teal-400 font-extrabold ml-2">Tugas 4 PBP/PBD To Do List</h1>
 
-<div style="margin-top:10px;">
-  User:
-  {{user}}
+<div style="margin-top:10px;" class="text-2xl text-gray-900 dark:text-black ml-2">
+  User:<small class="ml-2 font-semibold text-red-500">{{user}}</small>
 </div>
 
-<div style="margin-top:10px;">
-<button><a href="{% url 'todolist:create_task' %}">Tambah Task Baru</a></button>
+<div style="margin-top:10px;" class='ml-2'>
+  <button><a class="bg-white hover:bg-gray-120 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow" href="{% url 'todolist:create_task' %}">Tambah Task Baru</a></button>
 </div>
 
-<table>
-    <tr>
-      <th>Date</th>
-      <th>Title</th>
-      <th>Description</th>
-      <th>Status</th>
-      <th>Update</th>
-      <th>Delete</th> 
-    </tr>
-    {% for task in list_task %}
-    <tr>
-        <th>{{task.date}}</th>
-        <th>{{task.title}}</th>
-        <th>{{task.description}}</th>
-        {% if task.is_finished %}
-        <th> Selesai </th>
-        {% else %}
-        <th> Belum Selesai </th>
-        {% endif %}
-        <th> <button> <a href="{% url 'todolist:change_status' task.id %}"> Ganti Status</a> </button> </th>
-        <th> <button> <a href="{% url 'todolist:delete' task.id %}"> Delete </a> </button> </th>
-    </tr>
-    {% endfor %}
-  </table>
-  
-  <div style="margin-top:10px;">
-  <button><a href="{% url 'todolist:logout' %}">Logout</a></button>
+<div style="margin-top:20px;">
+  <div class='ml-2'>
+  <table class="w-1/2 text-sm text-left">
+    <thead class="text-l text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400 ">
+      <tr>
+        <th>Date</th>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Status</th>
+        <th>Update</th>
+        <th>Delete</th> 
+      </tr>
+    </thead>
+      {% for task in list_task %}
+      <tr>
+          <th>{{task.date}}</th>
+          <th>{{task.title}}</th>
+          <th>{{task.description}}</th>
+          {% if task.is_finished %}
+          <th> Selesai </th>
+          {% else %}
+          <th class="table-red"> Belum Selesai </th>
+          {% endif %}
+          <th> <button> <a href="{% url 'todolist:change_status' task.id %}"> Ganti Status</a> </button> </th>
+          <th> <button> <a href="{% url 'todolist:delete' task.id %}"> Delete </a> </button> </th>
+      </tr>
+      {% endfor %}
+    </table>
+  </div>
+  </div>
+
+  <br>
+  <div class='ml-2'>
+  <button>
+    <a class="bg-white hover:bg-gray-120 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow"href="{% url 'todolist:logout' %}">Logout</a>
+  </button>
   </div>
 {% endblock content %}

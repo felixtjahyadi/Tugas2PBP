@@ -1,17 +1,24 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<form method="POST" action="">
-    <h1>TASK FORM</h1>
+<form method="POST" action="" class="">
+    <h1 class="text-4xl text-black font-extrabold ml-2">TASK FORM</h1>
     {% csrf_token %}
-    <div>
+    <br>
+    <div class=' ml-3 md:flex md:items-center mb-6 uppercase'>
+        <p class="underline">
         Title:
-        <div>{{ form.title }}</div>
+        </p>
+        <div class='ml-1'>
+            {{ form.title }}
+        </div>
     </div>
-    <div style="margin-top:10px;">
+    <div style="margin-top:10px;" class='ml-3 uppercase'>
+        <p class="underline">
         Description:
+        </p>
         <div>{{ form.description }}</div>
     </div>
-    <input type="submit" value="Submit" />
+    <input class='ml-3 bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow' type="submit" value="Submit" />
 </form>
 {% endblock content %}
