@@ -1,51 +1,51 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h1 class="text-4xl text-teal-400 font-extrabold ml-2">Tugas 4 PBP/PBD To Do List</h1>
+<div class="">
+<h1 class="text-5xl text-center text-teal-400 font-extrabold ml-2 sm:text-4xl uppercase sm:normal-case underline">Tugas 4 PBP/PBD To Do List</h1>
 
-<div style="margin-top:10px;" class="text-2xl text-gray-900 dark:text-black ml-2">
-  User:<small class="ml-2 font-semibold text-red-500">{{user}}</small>
+<div style="margin-top:10px;" class="text-2xl text-end text-gray-900 dark:text-black ml-2">
+  User:<small class="ml-2 font-semibold text-blue-500">{{user}}</small>
+  <button>
+    <a class="text-red-700 hover:text-white border border-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:border-red-500 dark:text-red-500 dark:hover:text-white dark:hover:bg-red-600 dark:focus:ring-red-900"href="{% url 'todolist:logout' %}">
+      Logout</a>
+  </button>
 </div>
 
 <div style="margin-top:10px;" class='ml-2'>
-  <button><a class="bg-white hover:bg-gray-120 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow" href="{% url 'todolist:create_task' %}">Tambah Task Baru</a></button>
+  <button class="py-2 inline-flex justify-center w-full text-center">
+    <a class="bg-white hover:bg-gray-120 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow" href="{% url 'todolist:create_task' %}">Tambah Task Baru</a>
+  </button>
 </div>
 
 <div style="margin-top:20px;">
-  <div class='ml-2'>
-  <table class="w-1/2 text-sm text-left">
-    <thead class="text-l text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400 ">
-      <tr>
-        <th>Date</th>
-        <th>Title</th>
-        <th>Description</th>
-        <th>Status</th>
-        <th>Update</th>
-        <th>Delete</th> 
-      </tr>
-    </thead>
+  <div class='ml-2 mr-2'>
       {% for task in list_task %}
-      <tr>
-          <th>{{task.date}}</th>
-          <th>{{task.title}}</th>
-          <th>{{task.description}}</th>
+        <div class="max-w-full rounded overflow-auto shadow-lg border-2 border-black-500 dark:bg-grey-500 bg-grey-500 hover:bg-orange-100">
+          <h1 class="ml-2 text-sm text-right font-medium text-gray-500 dark:text-gray-400">{{task.date}}</h1>
+          <div class="ml-2 text-gray-900 text-xl leading-tight font-medium mb-2">{{task.title}}
           {% if task.is_finished %}
-          <th> Selesai </th>
+          <span class="inline-block dark:bg-green-400/75 bg-green-400/75 rounded-full px-3 py-1 text-sm font-bold text-black mr-2 mb-2">Status: Selesai </span>
           {% else %}
-          <th class="table-red"> Belum Selesai </th>
+          <span class="inline-block dark:bg-red-600/75 bg-red-600/75 rounded-full px-3 py-1 text-sm font-bold text-white mr-2 mb-2">Status: Belum Selesai </span>
           {% endif %}
-          <th> <button> <a href="{% url 'todolist:change_status' task.id %}"> Ganti Status</a> </button> </th>
-          <th> <button> <a href="{% url 'todolist:delete' task.id %}"> Delete </a> </button> </th>
-      </tr>
-      {% endfor %}
-    </table>
+          </div>
+          <p class=" ml-2 text-base leading-relaxed mt-0 mb-4 text-black-500 font-bold sm:font-medium break-words">
+            {{task.description}}
+          </p>
+          <div class="flex">
+            <div class="">
+              <button type="button" class="ml-2 text-white bg-blue-700 hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"> 
+                <a href="{% url 'todolist:change_status' task.id %}"> Ganti Status</a> </button>
+            </div>
+            <div class="">
+              <button type="button" class="text-white bg-red-700 hover:bg-red-800 focus:outline-none focus:ring-4 focus:ring-red-300 font-medium rounded-full text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900">
+              <a href="{% url 'todolist:delete' task.id %}"> Delete </a> </button>
+            </div>
+          </div>
+        </div>
+        <br>
+      {% endfor %}  
   </div>
-  </div>
-
-  <br>
-  <div class='ml-2'>
-  <button>
-    <a class="bg-white hover:bg-gray-120 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow"href="{% url 'todolist:logout' %}">Logout</a>
-  </button>
-  </div>
+</div>
 {% endblock content %}

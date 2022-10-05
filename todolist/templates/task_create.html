@@ -1,24 +1,28 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<form method="POST" action="" class="">
-    <h1 class="text-4xl text-black font-extrabold ml-2">TASK FORM</h1>
-    {% csrf_token %}
-    <br>
-    <div class=' ml-3 md:flex md:items-center mb-6 uppercase'>
-        <p class="underline">
-        Title:
-        </p>
-        <div class='ml-1'>
-            {{ form.title }}
+    <form method="POST" action="" class="flex flex-col justify-center items-center">
+        <div class="border-separate border-spacing-2 border border-slate-500 bg-teal-300">
+        <h1 class="ml-2 text-6xl md:text-4xl text-black font-extrabold text-center">TASK FORM</h1>
+        {% csrf_token %}
+        <br>
+        <div class='md:flex md:items-center mb-6 uppercase font-bold'>
+            <p class="text-blue-500 md:text-2xl text-4xl ml-2 font-sans">
+            Title:
+            </p>
+            <div class='md:mt-0 mt-2 ml-2'>
+                {{ form.title }}
+            </div>
         </div>
-    </div>
-    <div style="margin-top:10px;" class='ml-3 uppercase'>
-        <p class="underline">
-        Description:
-        </p>
-        <div>{{ form.description }}</div>
-    </div>
-    <input class='ml-3 bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow' type="submit" value="Submit" />
-</form>
+        <div style="margin-top:10px;" class='uppercase font-bold'>
+            <p class="text-blue-500 md:text-2xl text-4xl md:text-center mb-2 ml-2">
+            Description:
+            </p>
+            <div class="md:mt-0 mt-2 ml-2 mr-2">{{ form.description }}</div>
+        </div>
+        <div class="inline-flex justify-end w-full text-center">
+        <input class='m-3 bg-black hover:bg-blue-500 text-gray-400 font-semibold py-2 px-4 border border-gray-400 rounded shadow' type="submit" value="Submit" />
+        </div>
+        </div>
+    </form>
 {% endblock content %}
