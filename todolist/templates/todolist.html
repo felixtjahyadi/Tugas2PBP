@@ -12,49 +12,15 @@
   </button>
 </div>
 
-<div style="margin-top:10px;" class='inline-flex justify-center w-full text-center'>
-  <button class="px-3">
-    <a class="bg-white hover:bg-gray-120 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow" href="{% url 'todolist:create_task' %}">
-      Tambah Task Baru
-    </a>
+<div style="margin-top:10px;" class='ml-2'>
+  <button class="py-2 inline-flex justify-center w-full text-center">
+    <a class="bg-white hover:bg-gray-120 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow" href="{% url 'todolist:create_task' %}">Tambah Task Baru</a>
   </button>
-  <button type="button" class="bg-white hover:bg-gray-120 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow" data-bs-toggle="modal" data-bs-target="#mainModal">
-    Add Task
-  </button>
-  <button id="refresh_data" class="px-3 underline">Refresh</button>
 </div>
 
-<div class="modal fade" id="mainModal" tabindex="-1" aria-labelledby="mainModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h1 class="modal-title fs-5" id="mainModalLabel">
-          Add Task
-        </h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" id="close_modal"></button>
-      </div>
-      <div class="modal-body">
-        <div class = "create">
-          <form method="POST" id="modal_form">  
-              {% csrf_token %} 
-              <table>
-                {{ form.as_table }}
-              </table>
-          </form>
-        </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" data-bs-dismiss="modal">Close</button>
-        <button type="submit" class="btn btn-primary" id="submit_task">Submit</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-<div style="margin-top:20px;" >
-  <div class='ml-2 mr-2' id='main_div'>
-      <!-- {% for task in list_task %}
+<div style="margin-top:20px;">
+  <div class='ml-2 mr-2'>
+      {% for task in list_task %}
         <div class="max-w-full rounded overflow-auto shadow-lg border-2 border-black-500 dark:bg-grey-500 bg-grey-500 hover:bg-orange-100">
           <h1 class="ml-2 text-sm text-right font-medium text-gray-500 dark:text-gray-400">{{task.date}}</h1>
           <div class="ml-2 text-gray-900 text-xl leading-tight font-medium mb-2">{{task.title}}
@@ -79,46 +45,7 @@
           </div>
         </div>
         <br>
-      {% endfor %}   --> 
+      {% endfor %}  
   </div>
 </div>
-
-<script>
-  $(document).ready(function(){
-      $("#refresh_data").click(function(){
-          $.get("/todolist/json/", function(data) {
-              $("#main_div").empty();
-                for(var i = 0 ; i < data.length; i++){
-                    $("#main_div").append(`
-                    <div class="max-w-full rounded overflow-auto shadow-lg border-2 border-black-500 dark:bg-grey-500 bg-grey-500 hover:bg-orange-100">
-                      <h1 class="ml-2 text-sm text-right font-medium text-gray-500 dark:text-gray-400">${data[i].fields.date}</h1>
-                        <div class="ml-2 text-gray-900 text-xl leading-tight font-medium mb-2">${data[i].fields.title}
-                          ${data[i].fields.is_finished ? '<span class="inline-block dark:bg-green-400/75 bg-green-400/75 rounded-full px-3 py-1 text-sm font-bold text-black mr-2 mb-2">Status: Selesai </span>':'<span class="inline-block dark:bg-red-600/75 bg-red-600/75 rounded-full px-3 py-1 text-sm font-bold text-white mr-2 mb-2">Status: Belum Selesai </span>'}
-                          </div>
-                          <p class=" ml-2 text-base leading-relaxed mt-0 mb-4 text-black-500 font-bold sm:font-medium break-words">
-                            ${data[i].fields.description}
-                          </p>
-                          <div class="flex">
-                              <button type="button" class="ml-2 text-white bg-blue-700 hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"> 
-                                <a href="/todolist/change-status/${data[i].pk}"> Ganti Status</a> </button>
-                          </div>
-                        </div>
-                    </div>
-                    `
-                    );
-              }
-          });
-      });
-  });
-  
-  
-  $(document).ready(function(){
-      $("#submit_task").click(function(){
-          $.post("/todolist/add/", $('#modal_form').serialize());
-          $("#close_modal").click();
-          setTimeout(function(){$("#refresh_data").click();}, 200);
-      }); 
-  });
-</script>
-
 {% endblock content %}

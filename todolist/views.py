@@ -1,4 +1,4 @@
-from datetime import date
+import datetime
 from multiprocessing import context
 from django.shortcuts import render
 from todolist.models import Task
@@ -11,18 +11,14 @@ from django.contrib.auth import logout
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponseRedirect
 from .forms import ToDoListForm
-from django.core import serializers
-from django.http import HttpResponse
-from django.http import HttpResponseNotFound
-
+# Create your views here.
 
 @login_required(login_url='/todolist/login/')
 def show_todolist(request):
     task_data = Task.objects.filter(user = request.user)
     context = {
         'list_task' : task_data,
-        'user' : request.user,
-        'form' : ToDoListForm()
+        'user' : request.user
     }
     return render(request, "todolist.html", context)
 
@@ -83,38 +79,3 @@ def change_status(request, pk):
 def delete(request, pk):
     Task.objects.filter(pk=pk).delete()
     return redirect('todolist:show_todolist')
-
-def show_json(request):
-    data_task = Task.objects.filter(user = request.user)
-    return HttpResponse(serializers.serialize("json", data_task), content_type="application/json")
-
-def add_ajax(request):
-    if request.method == "POST":
-        form = ToDoListForm(request.POST)
-        if form.is_valid():
-            data = form.cleaned_data
-            user = request.user
-            title = data['title']
-            description = data['description']
-            date = data['date']
-            todo = Task(user = user, date=date, title = title, description = description)
-            todo.save()
-        return redirect('todolist:show_todolist')
-    return HttpResponseNotFound()
-
-# def delete_ajax(request,pk):
-#     if(Task.objects.get(pk=pk).user == request.user):
-#         Task.objects.filter(pk = pk).delete()
-#         tasks = Task.objects.filter(user = request.user)
-#         send = []
-#         for task in tasks:
-#             data = {
-#                 "id": task.pk,
-#                 "title": task.title,
-#                 "description": task.description,
-#                 "date": str(task.date),
-#                 "is_finished": task.is_finished,
-#             }
-#             send.append(data)
-    
-#         return JsonResponse(kirim, safe = False)
