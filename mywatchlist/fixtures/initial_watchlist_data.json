@@ -4,7 +4,7 @@
         "pk" : "1", 
         "fields": {
             "title": "Avengers: Endgame",
-            "release_date": "2019-04-24",
+            "release_date": "24 April 2019",
             "rating": 5,
             "review": "Film Avengers: Endgame merupakan kelanjutan dari film sebelumnya Avengers: Infinity War. Film ini menceritakan dampak dari aksi Thanos, penjahat untuk kedua film yang telah menghapus setengah populasi di semesta dan perjuangan para pahlawan Avengers mencari cara untuk membalikkan keadaan seperti semula. Film ini merupakan film yang diantisipasi oleh setiap penggemar MCU terutama dalam film sebelumnya terdapat cliff hanger.",
             "watched": "Sudah ditonton"
@@ -15,7 +15,7 @@
         "pk" : "2", 
         "fields": {
             "title": "Shang-Chi and the Legend of the Ten Rings",
-            "release_date": "2021-09-30",
+            "release_date": "30 September 2021",
             "rating": 3,
             "review": "Film Shang-Chi berceritaan seorang pria bernama Shang-Chi (Simu Liu) kabur dari masa lalunya dan menjalani kehidupan biasa di San Fransisco namun ia pun diburu oleh sekelompok teroris. Dia pun harus kembali dan menghadapi apa yang ia tinggalkan. Film ini membawa nuansa Asia dan banyak martial arts yang jarang dilihat di MCU dan direkomendasi oleh banyak orang.",
             "watched": "Belum ditonton"
@@ -26,7 +26,7 @@
         "pk" : "3", 
         "fields": {
             "title": "Shazam!",
-            "release_date": "2019-04-05",
+            "release_date": "5 April 2019",
             "rating": 4,
             "review": "Film Shazam! adalah film seputar superhero bernama Shazam yang merupakan seorang anak laki-laki yang mendapat kekuatan super untuk berubah dengan berteriak Shazam. Film ini memadukan komedi dan aksi yang sangat iconic dari superhero Shazam di komik.",
             "watched": "Belum ditonton"
@@ -37,7 +37,7 @@
         "pk" : "4", 
         "fields": {
             "title": "Spider-Man: Into the Spider-Verse",
-            "release_date": "2018-12-13",
+            "release_date": "12 Desember 2018",
             "rating": 4,
             "review": "Film Spider-Man ini adalah animasi yang menceritakan tentang berbagai Spider-Man yang ada. Film menghadirkan beberapa Spider-Man yang muncul di serial komik tapi tidak memiliki film tersendiri.",
             "watched": "Belum ditonton"
@@ -48,7 +48,7 @@
         "pk" : "5", 
         "fields": {
             "title": "Ready Player One",
-            "release_date": "2018-03-28",
+            "release_date": "28 Maret 2018",
             "rating": 4,
             "review": "Film Ready Player One menceritakan dunia yang berada di ambang kehancuran dikarenakan masalah kepadatan penduduk dan munculnya dunia virtual yang menjadi pelarian banyak orang.",
             "watched": "Sudah ditonton"
@@ -59,7 +59,7 @@
         "pk" : "6", 
         "fields": {
             "title": "Doctor Strange in the Multiverse of Madness",
-            "release_date": "2022-05-05",
+            "release_date": "5 Mei 2022",
             "rating": 4,
             "review": "Film Doctor Strange ini merupakan film kedua untuknya yang bertemakan Multiverse, suatu konsep yang telah disentuh oleh film dari superhero lainnya yaitu Spider-Man. Film ini cocok untuk para penggemar film action dan thriller.",
             "watched": "Sudah ditonton"
@@ -70,7 +70,7 @@
         "pk" : "7", 
         "fields": {
             "title": "Thor: Love and Thunder",
-            "release_date": "2022-07-06",
+            "release_date": "6 Juli 2022",
             "rating": 3,
             "review": "Film Thor terbaru yang berceritakan tentang seorang pembunuh dewa yang ingin menghidupkan kembali putrinya. Film ini berlangsung pada saat Thor berada di luar angkasa bersama dengan Guardians of the Galaxy. Sebagai penerus dari film-film Thor terdahulu, banyak ekspetasi yang muncul untuk film kali ini.",
             "watched": "Sudah ditonton"
@@ -81,7 +81,7 @@
         "pk" : "8", 
         "fields": {
             "title": "Pokemon: Detective Pikachu",
-            "release_date": "2019-05-08",
+            "release_date": "8 Mei 2019",
             "rating": 5,
             "review": "Film live action bertemakan pokemon. Film ini menghadirkan karakter iconic dari game Pokemon ke dunia nyata menggunakan CGI. Bagi kalian pecinta pokemon, kalian akan terhibur dengan film ini dan dapat membayangkan seperti apa jika pokemon itu nyata.",
             "watched": "Sudah ditonton"
@@ -92,7 +92,7 @@
         "pk" : "9", 
         "fields": {
             "title": "Godzilla vs. Kong",
-            "release_date": "2021-03-24",
+            "release_date": "24 Maret 2021",
             "rating": 4,
             "review": "Film Godzilla vs. Kong seperti judulnya berceritakan seputar hal yang pernah dipertanyakan sebelumnya, siapa yang akan menang, Godzilla atau King Kong? Film ini membawakan aksi luar biasa dengan latar belakang pertarungan antar dua raksasa hebat cocok bagi siapapun yang sangat menyukai aksi.",
             "watched": "Belum ditonton"
@@ -103,7 +103,7 @@
         "pk" : "10", 
         "fields": {
             "title": "Eternals",
-            "release_date": "2021-11-03",
+            "release_date": "3 November 2021",
             "rating": 3,
             "review": "Film Eternals menceritakan tentang sekelompok orang yang sudah berada di Bumi sebelum manusia. Mereka berasal dari luar angkasa atas perintah dari petinggi mereke. Film ini menggabungkan misteri dan aksi sehingga membawakan nuansa tak terduga di kala sesuatu terjadi.",
             "watched": "Sudah ditonton"
